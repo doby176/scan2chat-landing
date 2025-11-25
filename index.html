@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scan2Chat - אפליקציית השליחים המתקדמת</title>
     <meta name="description"
-        content="חסוך שעות עבודה כל יום! אפליקציה מתקדמת לשליחים - סרוק, שלח, וארגן משלוחים אוטומטית.">
+        content="חסוך זמן עבודה יקר כל יום! אפליקציה מתקדמת לשליחים - סרוק, שלח, וארגן משלוחים אוטומטית.">
     <style>
         * {
             margin: 0;
@@ -36,6 +36,13 @@
             box-shadow: 0 20px 60px rgba(76, 175, 80, 0.3);
             margin-bottom: 40px;
             border: 2px solid #4CAF50;
+        }
+
+        .logo {
+            max-width: 150px;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            filter: brightness(1.3);
         }
 
         h1 {
@@ -253,6 +260,10 @@
                 border-radius: 15px;
             }
 
+            .logo {
+                max-width: 120px;
+            }
+
             h1 {
                 font-size: 2.2em;
             }
@@ -333,6 +344,10 @@
         }
 
         @media (max-width: 480px) {
+            .logo {
+                max-width: 100px;
+            }
+
             h1 {
                 font-size: 1.9em;
             }
@@ -366,8 +381,9 @@
     <div class="container">
         <!-- Hero Section -->
         <div class="hero">
-            <h1>📱 Scan2Chat</h1>
-            <p class="subtitle">חסוך זמן עבודה יקר כל יום! האפליקציה שמארגנת את כל המשלוחים שלך אוטומטית</p>
+            <img src="websitelogo.png" alt="Scan2Chat Logo" class="logo">
+            <h1>Scan2Chat</h1>
+            <p class="subtitle">חסוך שעות עבודה כל יום! האפליקציה שמארגנת את כל המשלוחים שלך אוטומטית</p>
             <a href="app-release.apk" class="cta-button" download>⬇️ הורד עכשיו (חינם 7 ימים)</a>
             <a href="terms.html" class="cta-button secondary">📄 תנאי שימוש</a>
         </div>
