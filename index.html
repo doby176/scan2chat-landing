@@ -228,23 +228,112 @@
             color: #45a049;
         }
 
-        /* Responsive */
+        /* Responsive - Better mobile experience */
         @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .hero {
+                padding: 40px 25px;
+                border-radius: 15px;
+            }
+
             h1 {
-                font-size: 2em;
+                font-size: 2.2em;
             }
 
             .subtitle {
-                font-size: 1.1em;
+                font-size: 1.15em;
+                margin-bottom: 25px;
             }
 
             .cta-button {
-                padding: 15px 30px;
-                font-size: 1.1em;
+                padding: 16px 35px;
+                font-size: 1.15em;
+                display: block;
+                margin: 10px auto;
+                max-width: 320px;
+            }
+
+            .features {
+                gap: 20px;
+            }
+
+            .feature-card {
+                padding: 25px 20px;
+            }
+
+            .feature-icon {
+                font-size: 2.5em;
+            }
+
+            .feature-card h3 {
+                font-size: 1.35em;
+            }
+
+            .feature-card p {
+                font-size: 1.05em;
+            }
+
+            .pricing {
+                padding: 30px 20px;
+                border-radius: 15px;
+            }
+
+            .pricing h2 {
+                font-size: 1.8em;
             }
 
             .pricing-cards {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .pricing-card {
+                padding: 25px 20px;
+            }
+
+            .pricing-card h3 {
+                font-size: 1.4em;
+            }
+
+            .price {
+                font-size: 2.2em;
+            }
+
+            .trial-note {
+                font-size: 1.1em;
+                padding: 18px;
+            }
+
+            .footer {
+                padding: 25px 20px;
+                border-radius: 15px;
+            }
+        }
+
+        /* Very small screens */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.9em;
+            }
+
+            .subtitle {
+                font-size: 1.05em;
+            }
+
+            .cta-button {
+                font-size: 1.05em;
+                padding: 14px 28px;
+            }
+
+            .feature-icon {
+                font-size: 2.3em;
+            }
+
+            .price {
+                font-size: 2em;
             }
         }
     </style>
