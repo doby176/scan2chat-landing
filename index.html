@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scan2Chat - אפליקציית השליחים המתקדמת</title>
-    <meta name="description"
-        content="אפליקציה מתקדמת לשליחים - סרוק מספרי טלפון, שלח הודעות אוטומטיות, וחסוך זמן יקר. ₪40/חודש או ₪400 לכל החיים.">
+    <meta name="description" content="אפליקציה מתקדמת לשליחים - סרוק מספרי טלפון, שלח הודעות אוטומטיות, וחסוך זמן יקר.">
     <style>
         * {
             margin: 0;
@@ -16,8 +15,8 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #333;
+            background: #000000;
+            color: #FFFFFF;
             line-height: 1.6;
         }
 
@@ -29,52 +28,53 @@
 
         /* Hero Section */
         .hero {
-            background: white;
+            background: #1A1A1A;
             border-radius: 20px;
             padding: 60px 40px;
             text-align: center;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 60px rgba(76, 175, 80, 0.3);
             margin-bottom: 40px;
-        }
-
-        .logo {
-            font-size: 3em;
-            margin-bottom: 20px;
+            border: 2px solid #4CAF50;
         }
 
         h1 {
             font-size: 2.5em;
-            color: #667eea;
+            color: #4CAF50;
             margin-bottom: 20px;
         }
 
         .subtitle {
             font-size: 1.3em;
-            color: #666;
+            color: #CCCCCC;
             margin-bottom: 30px;
         }
 
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #4CAF50;
             color: white;
             padding: 18px 50px;
             font-size: 1.3em;
             font-weight: bold;
             text-decoration: none;
-            border-radius: 50px;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.4);
             transition: transform 0.3s, box-shadow 0.3s;
             margin: 10px;
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+            box-shadow: 0 15px 40px rgba(76, 175, 80, 0.6);
+            background: #45a049;
         }
 
         .cta-button.secondary {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background: #2196F3;
+        }
+
+        .cta-button.secondary:hover {
+            background: #1976D2;
         }
 
         /* Features Section */
@@ -86,16 +86,18 @@
         }
 
         .feature-card {
-            background: white;
+            background: #1A1A1A;
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             text-align: center;
             transition: transform 0.3s;
+            border: 1px solid #333;
         }
 
         .feature-card:hover {
             transform: translateY(-10px);
+            border-color: #4CAF50;
         }
 
         .feature-icon {
@@ -104,91 +106,126 @@
         }
 
         .feature-card h3 {
-            color: #667eea;
-            margin-bottom: 10px;
-            font-size: 1.4em;
+            color: #4CAF50;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .feature-card p {
+            color: #CCCCCC;
+            font-size: 1.1em;
         }
 
         /* Pricing Section */
         .pricing {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .price-card {
-            background: white;
+            background: #1A1A1A;
+            border-radius: 20px;
             padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            position: relative;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid #333;
         }
 
-        .price-card.popular {
-            border: 3px solid #667eea;
+        .pricing h2 {
+            text-align: center;
+            color: #4CAF50;
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .pricing-card {
+            background: #000000;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid #333;
+            transition: all 0.3s;
+        }
+
+        .pricing-card:hover {
+            border-color: #4CAF50;
             transform: scale(1.05);
         }
 
-        .popular-badge {
-            position: absolute;
-            top: -15px;
-            right: 20px;
-            background: #667eea;
-            color: white;
-            padding: 5px 20px;
-            border-radius: 20px;
-            font-weight: bold;
+        .pricing-card.popular {
+            border-color: #4CAF50;
+            background: #0D1F0D;
+        }
+
+        .pricing-card h3 {
+            color: #4CAF50;
+            font-size: 1.5em;
+            margin-bottom: 15px;
         }
 
         .price {
-            font-size: 3em;
-            color: #667eea;
+            font-size: 2.5em;
+            color: #FFFFFF;
             font-weight: bold;
             margin: 20px 0;
         }
 
         .price-period {
-            font-size: 0.4em;
             color: #999;
+            font-size: 0.5em;
         }
 
-        .price-features {
+        .pricing-card ul {
             list-style: none;
             margin: 20px 0;
             text-align: right;
         }
 
-        .price-features li {
+        .pricing-card li {
             padding: 10px 0;
-            border-bottom: 1px solid #eee;
+            color: #CCCCCC;
+            border-bottom: 1px solid #333;
         }
 
-        .price-features li:before {
-            content: "✓ ";
+        .pricing-card li:last-child {
+            border-bottom: none;
+        }
+
+        .trial-note {
+            background: #0D1F0D;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
             color: #4CAF50;
-            font-weight: bold;
-            margin-left: 10px;
+            font-size: 1.2em;
+            border: 1px solid #4CAF50;
         }
 
         /* Footer */
         .footer {
-            background: white;
+            background: #1A1A1A;
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             text-align: center;
+            color: #999;
+            border: 1px solid #333;
         }
 
-        .footer a {
-            color: #667eea;
+        .footer-links {
+            margin: 20px 0;
+        }
+
+        .footer-links a {
+            color: #4CAF50;
             text-decoration: none;
             margin: 0 15px;
+            transition: color 0.3s;
         }
 
-        .footer a:hover {
-            text-decoration: underline;
+        .footer-links a:hover {
+            color: #45a049;
         }
 
         /* Responsive */
@@ -206,8 +243,8 @@
                 font-size: 1.1em;
             }
 
-            .price-card.popular {
-                transform: scale(1);
+            .pricing-cards {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -217,12 +254,10 @@
     <div class="container">
         <!-- Hero Section -->
         <div class="hero">
-            <div class="logo">📦📱</div>
-            <h1>Scan2Chat</h1>
-            <p class="subtitle">האפליקציה שכל שליח חייב להכיר - סרוק, שלח, וחסוך זמן!</p>
-
-            <a href="#download" class="cta-button">הורד עכשיו - 7 ימים חינם</a>
-            <a href="#pricing" class="cta-button secondary">ראה מחירים</a>
+            <h1>📱 Scan2Chat</h1>
+            <p class="subtitle">האפליקציה המתקדמת לשליחים – סרוק, שלח, וחסוך זמן!</p>
+            <a href="app-release.apk" class="cta-button" download>⬇️ הורד עכשיו (חינם 7 ימים)</a>
+            <a href="terms.html" class="cta-button secondary">📄 תנאי שימוש</a>
         </div>
 
         <!-- Features Section -->
@@ -230,143 +265,88 @@
             <div class="feature-card">
                 <div class="feature-icon">📸</div>
                 <h3>סריקה חכמה</h3>
-                <p>סרוק מספרי טלפון ישירות מהמדבקה - OCR מתקדם שעובד גם בתאורה חלשה</p>
+                <p>סרוק מספרי טלפון ישירות מהמסך – ללא הקלדה ידנית</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">💬</div>
-                <h3>הודעות אוטומטיות</h3>
-                <p>שלח SMS או WhatsApp עם הודעה מותאמת אישית - חסוך דקות יקרות בכל משלוח</p>
+                <h3>שליחה אוטומטית</h3>
+                <p>שלח הודעות SMS או WhatsApp בלחיצה אחת</p>
             </div>
 
             <div class="feature-card">
-                <div class="feature-icon">🏠</div>
-                <h3>ניהול כתובות וקודים</h3>
-                <p>שמור קודי כניסה לבניינים, פרטי לקוחות, והערות - הכל במקום אחד</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
+                <div class="feature-icon">📦</div>
                 <h3>מצב משלוחים</h3>
-                <p>ראה היסטוריית הודעות, תגובות לקוחות, וזמן עדכון אחרון - שליטה מלאה</p>
+                <p>עקוב אחרי תשובות לקוחות ושמור כתובות אוטומטית</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎤</div>
+                <h3>קלט קולי</h3>
+                <p>הכנס כתובות בדיבור – ללא הקלדה</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔑</div>
+                <h3>מאגר קודים</h3>
+                <p>שמור קודי כניסה לכל כתובת</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">⚡</div>
                 <h3>שליחה קבוצתית</h3>
-                <p>שלח הודעות לכמות גדולה של לקוחות בלחיצה אחת - מושלם לסבב משלוחים גדול</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">🔒</div>
-                <h3>פרטיות מלאה</h3>
-                <p>כל הנתונים נשמרים רק במכשיר שלך - אף אחד לא רואה את הלקוחות שלך</p>
+                <p>שלח עד 30 הודעות בבת אחת</p>
             </div>
         </div>
 
         <!-- Pricing Section -->
-        <div id="pricing">
-            <h2 style="text-align: center; color: white; font-size: 2.5em; margin-bottom: 30px;">בחר את החבילה שלך</h2>
-
-            <div class="pricing">
-                <div class="price-card">
-                    <h3>ניסיון חינם</h3>
-                    <div class="price">₪0<span class="price-period">/7 ימים</span></div>
-                    <ul class="price-features">
-                        <li>גישה מלאה לכל התכונות</li>
-                        <li>ללא כרטיס אשראי</li>
-                        <li>ללא התחייבות</li>
-                        <li>בדוק אם זה מתאים לך</li>
-                    </ul>
-                    <a href="#download" class="cta-button">התחל ניסיון</a>
-                </div>
-
-                <div class="price-card">
-                    <h3>חודשי</h3>
+        <div class="pricing">
+            <h2>💰 מחירים</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>חודש אחד</h3>
                     <div class="price">₪40<span class="price-period">/חודש</span></div>
-                    <ul class="price-features">
-                        <li>כל התכונות</li>
-                        <li>ללא חידוש אוטומטי</li>
-                        <li>בטל בכל עת</li>
-                        <li>תמיכה מלאה</li>
+                    <ul>
+                        <li>✅ גישה מלאה לכל התכונות</li>
+                        <li>✅ עדכונים אוטומטיים</li>
+                        <li>✅ תמיכה טכנית</li>
                     </ul>
-                    <a href="#download" class="cta-button">התחל עכשיו</a>
                 </div>
 
-                <div class="price-card popular">
-                    <div class="popular-badge">הכי פופולרי!</div>
-                    <h3>לכל החיים</h3>
-                    <div class="price">₪400<span class="price-period">/חד-פעמי</span></div>
-                    <ul class="price-features">
-                        <li>תשלום אחד בלבד</li>
-                        <li>גישה לכל החיים</li>
-                        <li>כל העדכונים חינם</li>
-                        <li>תמיכה VIP</li>
-                        <li><strong>חיסכון של ₪80!</strong></li>
+                <div class="pricing-card popular">
+                    <h3>3 חודשים ⭐</h3>
+                    <div class="price">₪100<span class="price-period">/3 חודשים</span></div>
+                    <ul>
+                        <li>✅ חסכון של ₪20</li>
+                        <li>✅ גישה מלאה לכל התכונות</li>
+                        <li>✅ עדכונים אוטומטיים</li>
+                        <li>✅ תמיכה טכנית</li>
                     </ul>
-                    <a href="#download" class="cta-button">קנה עכשיו</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>6 חודשים</h3>
+                    <div class="price">₪200<span class="price-period">/6 חודשים</span></div>
+                    <ul>
+                        <li>✅ חסכון של ₪40</li>
+                        <li>✅ גישה מלאה לכל התכונות</li>
+                        <li>✅ עדכונים אוטומטיים</li>
+                        <li>✅ תמיכה טכנית</li>
+                    </ul>
                 </div>
             </div>
-        </div>
 
-        <!-- Download Section -->
-        <div id="download" class="hero">
-            <h2 style="color: #667eea; font-size: 2.5em; margin-bottom: 20px;">הורד את האפליקציה</h2>
-            <p style="font-size: 1.2em; margin-bottom: 30px;">התקנה פשוטה - 2 דקות והתחלת לעבוד!</p>
-
-            <div style="background: #f8f9fa; padding: 30px; border-radius: 15px; text-align: right; margin: 20px 0;">
-                <h3 style="color: #667eea; margin-bottom: 15px;">📱 הוראות התקנה:</h3>
-                <ol style="line-height: 2; font-size: 1.1em;">
-                    <li><strong>הורד את הקובץ APK</strong> (לחץ על הכפתור למטה)</li>
-                    <li><strong>פתח את הקובץ</strong> שהורדת</li>
-                    <li><strong>אשר התקנה</strong> ממקורות לא ידועים (אם מתבקש)</li>
-                    <li><strong>פתח את האפליקציה</strong> והירשם</li>
-                    <li><strong>התחל 7 ימי ניסיון חינם!</strong></li>
-                </ol>
-            </div>
-
-            <a href="app-debug.apk" class="cta-button" download style="font-size: 1.5em; padding: 20px 60px;">
-                ⬇️ הורד APK (גרסה 1.0)
-            </a>
-
-            <p style="margin-top: 20px; color: #999;">
-                <small>גודל הקובץ: ~25MB | דורש Android 6.0 ומעלה</small>
-            </p>
-        </div>
-
-        <!-- FAQ Section -->
-        <div class="hero">
-            <h2 style="color: #667eea; font-size: 2.5em; margin-bottom: 30px;">שאלות נפוצות</h2>
-
-            <div style="text-align: right;">
-                <h3 style="color: #667eea; margin-top: 20px;">❓ למה לא ב-Google Play?</h3>
-                <p>אנחנו בתהליך אישור, אבל רצינו לתת לשליחים להתחיל להשתמש כבר עכשיו! ההורדה הישירה בטוחה לחלוטין.</p>
-
-                <h3 style="color: #667eea; margin-top: 20px;">❓ זה בטוח?</h3>
-                <p>כן! האפליקציה לא שולחת נתונים לשרתים שלנו. כל המידע נשמר רק במכשיר שלך.</p>
-
-                <h3 style="color: #667eea; margin-top: 20px;">❓ מה קורה אחרי 7 הימים?</h3>
-                <p>האפליקציה תבקש ממך לבחור חבילה. אם לא תשלם, פשוט לא תוכל להמשיך להשתמש. אין חיובים אוטומטיים!</p>
-
-                <h3 style="color: #667eea; margin-top: 20px;">❓ יש תמיכה?</h3>
-                <p>כן! פנה אלינו ב-<strong>Scan2Chat@proton.me</strong> ונחזור אליך תוך 24 שעות.</p>
-
-                <h3 style="color: #667eea; margin-top: 20px;">❓ האם זה עובד עם WhatsApp?</h3>
-                <p>כן! יש כפתור ישיר ל-WhatsApp, אבל אנחנו ממליצים להשתמש ב-SMS כערוץ העיקרי.</p>
+            <div class="trial-note">
+                🎁 7 ימי ניסיון חינם – ללא צורך בכרטיס אשראי!
             </div>
         </div>
 
         <!-- Footer -->
         <div class="footer">
-            <p style="margin-bottom: 15px; font-size: 1.1em;">
-                <strong>Scan2Chat</strong> - נוצר על ידי שליחים, לשליחים 🚚
-            </p>
-            <p>
+            <div class="footer-links">
                 <a href="terms.html">תנאי שימוש ומדיניות פרטיות</a>
-            </p>
-            <p style="margin-top: 15px; color: #999;">
-                <small>© 2024 Scan2Chat. כל הזכויות שמורות.</small>
-            </p>
+            </div>
+            <p>© 2024 Scan2Chat. כל הזכויות שמורות.</p>
         </div>
     </div>
 </body>
