@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מדריך שימוש - Scan2Chat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #000000;
+            color: #FFFFFF;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: #1A1A1A;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+            border: 2px solid #4CAF50;
+        }
+
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #4CAF50;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .back-link:hover {
+            color: #45a049;
+        }
+
+        /* Tab Navigation */
+        .guide-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tab-button {
+            background: #1A1A1A;
+            color: #FFFFFF;
+            border: 2px solid #333;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tab-button:hover {
+            border-color: #4CAF50;
+            background: #0D1F0D;
+        }
+
+        .tab-button.active {
+            background: #4CAF50;
+            border-color: #4CAF50;
+            color: white;
+        }
+
+        /* Guide Content */
+        .guide-content {
+            display: none;
+            background: #1A1A1A;
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid #333;
+        }
+
+        .guide-content.active {
+            display: block;
+        }
+
+        .visual-reference {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .guide-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            border: 2px solid #4CAF50;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .guide-item {
+            background: #000000;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+
+        .guide-item h4 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .guide-item p {
+            color: #CCCCCC;
+        }
+
+        .guide-text h3 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Full Guide Styling */
+        .full-guide-text {
+            color: #CCCCCC;
+            text-align: right;
+        }
+
+        .full-guide-text h2 {
+            color: #4CAF50;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .full-guide-text h3 {
+            color: #FFFFFF;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .full-guide-text ul,
+        .full-guide-text ol {
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+
+        .full-guide-text li {
+            margin-bottom: 10px;
+        }
+
+        .full-guide-text strong {
+            color: #FFFFFF;
+        }
+
+        .full-guide-text blockquote {
+            background: #0D1F0D;
+            border-right: 4px solid #4CAF50;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .full-guide-text table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+        }
+
+        .full-guide-text th,
+        .full-guide-text td {
+            border: 1px solid #333;
+            padding: 12px;
+            text-align: right;
+        }
+
+        .full-guide-text th {
+            background: #000000;
+            color: #4CAF50;
+        }
+
+        .full-guide-text tr:nth-child(even) {
+            background: #0a0a0a;
+        }
+
+        @media (max-width: 768px) {
+            .guide-tabs {
+                flex-direction: column;
+            }
+
+            .tab-button {
+                width: 100%;
+            }
+
+            .guide-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="landing_page.html" class="back-link">← חזרה לדף הבית</a>
+
+        <div class="header">
+            <h1>📚 מדריך שימוש - Scan2Chat</h1>
+            <p>למד כיצד להשתמש בכל התכונות של האפליקציה</p>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="guide-tabs">
+            <button class="tab-button active" onclick="showGuide('visual')">👁️ מדריך חזותי</button>
+            <button class="tab-button" onclick="showGuide('full')">📖 מדריך מלא</button>
+        </div>
+
+        <!-- Visual Guide Tab -->
+        <div id="visual-guide" class="guide-content active">
+            <div class="visual-reference">
+                <img src="guide/guide_visual.png" alt="מדריך חזותי Scan2Chat" class="guide-image">
+            </div>
+            <div class="guide-text">
+                <h3>🔟 הסבר לפי מספרים</h3>
+                <div class="guide-grid">
+                    <div class="guide-item">
+                        <h4>1️⃣ אזור הסריקה</h4>
+                        <p>כוון את המצלמה למספר טלפון שברצונך לסרוק</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>2️⃣ חלון המספר המזוהה</h4>
+                        <p>מציג את המספר שזוהה. לחיצה כפולה להזנה ידנית</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>3️⃣ הגדרות</h4>
+                        <p>עריכת הודעת ברירת המחדל והתנתקות</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>4️⃣ פנס</h4>
+                        <p>הדלקה/כיבוי פנס למקומות חשוכים</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>5️⃣ מעבר בין מצבים</h4>
+                        <p>מצב SMS / מצב WhatsApp (זהירות - עלול לחסום!)</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>6️⃣ שליחה קבוצתית</h4>
+                        <p>עד 30 מספרים כל 5 דקות</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>7️⃣ יציאה לדרך</h4>
+                        <p>צפייה בתגובות לקוחות וניווט</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>8️⃣ שלח SMS</h4>
+                        <p>שליחת הודעת SMS למספר המזוהה</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>9️⃣ שלח WhatsApp</h4>
+                        <p>פתיחת WhatsApp עם הודעה מוכנה</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>🔟 הזנה ידנית</h4>
+                        <p>הזנת מספר טלפון באופן ידני</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Full Guide Tab -->
+        <div id="full-guide" class="guide-content">
+            <div class="full-guide-text">
+                <h2>תוכן עניינים</h2>
+                <ol>
+                    <li><a href="#sms-mode" style="color: #4CAF50; text-decoration: none;">מצב ברירת מחדל (SMS)</a></li>
+                    <li><a href="#bulk-send" style="color: #4CAF50; text-decoration: none;">שליחה קבוצתית</a></li>
+                    <li><a href="#flashlight" style="color: #4CAF50; text-decoration: none;">פנס</a></li>
+                    <li><a href="#settings" style="color: #4CAF50; text-decoration: none;">הגדרות</a></li>
+                    <li><a href="#whatsapp-mode" style="color: #4CAF50; text-decoration: none;">מצב WhatsApp</a></li>
+                    <li><a href="#manual-send" style="color: #4CAF50; text-decoration: none;">שליחה ידנית</a></li>
+                    <li><a href="#delivery-mode" style="color: #4CAF50; text-decoration: none;">מצב יציאה לדרך</a></li>
+                    <li><a href="#extra-features" style="color: #4CAF50; text-decoration: none;">תכונות נוספות</a></li>
+                </ol>
+
+                <hr style="border-color: #333; margin: 30px 0;">
+
+                <h2 id="sms-mode">מצב ברירת מחדל (SMS)</h2>
+                <h3>תיאור</h3>
+                <p>מצב ברירת המחדל של האפליקציה מאפשר סריקת מספרי טלפון ופתיחת חלון SMS עם הודעה מוגדרת מראש.</p>
+
+                <h3>איך להשתמש:</h3>
+                <ol>
+                    <li><strong>סרוק מספר טלפון</strong> - כוון את המצלמה למספר הטלפון</li>
+                    <li><strong>המספר יזוהה אוטומטית</strong> - יופיע בחלון הירוק למעלה</li>
+                    <li><strong>לחץ על כפתור "שלח SMS"</strong> - ייפתח חלון SMS עם ההודעה המוגדרת מראש</li>
+                    <li><strong>לחץ "שלח"</strong> בחלון ה-SMS - ההודעה תישלח ללקוח</li>
+                </ol>
+
+                <h3>הזנה ידנית של מספר:</h3>
+                <ul>
+                    <li><strong>לחיצה כפולה</strong> על החלון הירוק עם המספר המזוהה</li>
+                    <li><strong>לחיצה על כפתור "הזנה ידנית"</strong> (✏️)</li>
+                    <li>הזן את המספר ולחץ אישור</li>
+                </ul>
+
+                <h3>שינוי ההודעה:</h3>
+                <ul>
+                    <li>ההודעה המוגדרת מראש היא:</li>
+                </ul>
+                <blockquote>"היי 😊 משלוח בדרך 9:00-14:00. אפשר קומה/דירה+קוד? אם אין מישהו בבית להשאיר בדלת או בארון
+                    חשמל?"</blockquote>
+                <ul>
+                    <li>ניתן לשנות את ההודעה דרך <strong>תפריט ההגדרות</strong> (⚙️)</li>
+                </ul>
+
+                <h2 id="bulk-send">שליחה קבוצתית</h2>
+                <h3>תיאור</h3>
+                <p>מצב שליחה קבוצתית מאפשר לסרוק מספר מספרי טלפון ולשלוח להם הודעה בבת אחת.</p>
+
+                <h3>מגבלות חשובות:</h3>
+                <ul>
+                    <li><strong>עד 30 מספרים</strong> בכל חלון של 5 דקות</li>
+                    <li><strong>זמין רק במצב SMS</strong> (לא זמין במצב WhatsApp)</li>
+                </ul>
+
+                <h3>איך להשתמש:</h3>
+                <ol>
+                    <li><strong>לחץ על כפתור "שליחה קבוצתית"</strong> - האפליקציה תעבור למצב סריקה קבוצתית</li>
+                    <li><strong>סרוק מספרים</strong> - כל מספר שיזוהה יתווסף לרשימה</li>
+                    <li><strong>לחץ שוב על "שלח לרשימה (X/30)"</strong> - תיפתח חלונית עם כל המספרים</li>
+                    <li><strong>בחלונית הרשימה:</strong>
+                        <ul>
+                            <li><strong>החלק שמאלה/ימינה</strong> למחיקת מספר מהרשימה</li>
+                            <li><strong>לחץ "שלח"</strong> לשליחת ההודעה לכל הרשימה</li>
+                            <li><strong>לחץ "נקה"</strong> למחיקת כל הרשימה</li>
+                            <li><strong>לחץ "בטל"</strong> לביטול</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h3>הערות חשובות:</h3>
+                <ul>
+                    <li>המערכת מסננת אוטומטית מספרים שכבר ענו</li>
+                    <li>אם עברת את המכסה (30 מספרים ב-5 דקות), תקבל הודעת המתנה</li>
+                    <li>המערכת תציג כמה זמן נותר עד לחלון הבא</li>
+                </ul>
+
+                <h2 id="flashlight">פנס</h2>
+                <h3>תיאור</h3>
+                <p>כפתור פנס (🔦) להפעלת תאורה במקומות חשוכים.</p>
+
+                <h3>איך להשתמש:</h3>
+                <ul>
+                    <li><strong>לחץ על כפתור הפנס</strong> (🔦) להדלקה/כיבוי</li>
+                    <li>הכפתור יהיה <strong>בהיר</strong> כשהפנס דולק</li>
+                    <li>הכפתור יהיה <strong>עמום</strong> כשהפנס כבוי</li>
+                    <li>ההגדרה נשמרת אוטומטית</li>
+                </ul>
+
+                <h2 id="settings">הגדרות</h2>
+                <h3>תיאור</h3>
+                <p>תפריט ההגדרות (⚙️) מאפשר התאמה אישית של האפליקציה.</p>
+
+                <h3>אפשרויות זמינות:</h3>
+                <ol>
+                    <li><strong>עריכת הודעת ברירת מחדל</strong> - שינוי הטקסט שנשלח אוטומטית</li>
+                    <li><strong>התנתקות</strong> - יציאה מהחשבון</li>
+                </ol>
+
+                <h3>איך להשתמש:</h3>
+                <ol>
+                    <li>לחץ על כפתור ההגדרות (⚙️)</li>
+                    <li>ערוך את ההודעה המותאמת אישית</li>
+                    <li>שמור את השינויים</li>
+                </ol>
+
+                <h2 id="whatsapp-mode">מצב WhatsApp</h2>
+                <h3>⚠️ אזהרה חשובה!</h3>
+                <p><strong>שימוש במצב WhatsApp עלול לגרום לחסימה של 24 שעות ואף לצמיתות!</strong></p>
+
+                <h3>מתי להשתמש:</h3>
+                <ul>
+                    <li><strong>רק במקרי חירום</strong> כאשר הלקוח לא עונה ל-SMS</li>
+                    <li><strong>לא מומלץ לשימוש שוטף</strong></li>
+                    <li>WhatsApp עלול לזהות את זה כספאם ולחסום את החשבון</li>
+                </ul>
+
+                <h3>מגבלות במצב WhatsApp:</h3>
+                <ul>
+                    <li><strong>שליחה קבוצתית מושבתת</strong> - ניתן לשלוח רק למספר אחד בכל פעם</li>
+                    <li><strong>לא ניתן לקרוא הודעות מ-WhatsApp</strong> - המערכת קוראת רק מ-SMS עבור פרטי קוד/קומה/דירה
+                    </li>
+                </ul>
+
+                <h3>איך להשתמש:</h3>
+                <ol>
+                    <li><strong>לחץ על כפתור "מצב SMS"</strong> - הכפתור ישתנה ל-"מצב WhatsApp"</li>
+                    <li><strong>תופיע אזהרה באדום</strong> למשך 10 שניות</li>
+                    <li>סרוק מספר ולחץ "שלח WhatsApp"</li>
+                    <li><strong>לחזרה למצב SMS</strong> - לחץ שוב על הכפתור</li>
+                </ol>
+
+                <h2 id="manual-send">שליחה ידנית</h2>
+                <h3>תיאור</h3>
+                <p>שני כפתורים לשליחה ידנית ללא סריקה.</p>
+
+                <h3>כפתורים זמינים:</h3>
+                <ol>
+                    <li><strong>"שלח SMS"</strong> - פותח חלון SMS עם ההודעה המוגדרת מראש</li>
+                    <li><strong>"שלח WhatsApp"</strong> - פותח WhatsApp עם ההודעה המוגדרת מראש</li>
+                </ol>
+
+                <h3>איך להשתמש:</h3>
+                <ul>
+                    <li>לחץ על הכפתור הרצוי</li>
+                    <li>בחר איש קשר או הזן מספר</li>
+                    <li>ההודעה כבר תהיה כתובה - רק צריך ללחוץ שלח</li>
+                </ul>
+
+                <h2 id="delivery-mode">מצב יציאה לדרך</h2>
+                <h3>תיאור</h3>
+                <p>מצב מיוחד לאחר שליחת כל ההודעות, המאפשר לצפות בתגובות הלקוחות ולנווט אליהם.</p>
+
+                <h3>מתי להשתמש:</h3>
+                <p>לאחר שסיימת לשלוח את כל הודעות ה-SMS ללקוחות.</p>
+
+                <h3>איך להשתמש:</h3>
+                <ol>
+                    <li><strong>לחץ על כפתור "יציאה לדרך"</strong> (🚗)</li>
+                </ol>
+
+                <h3>תכונות נוספות בחלונית יציאה לדרך:</h3>
+                <ul>
+                    <li><strong>כפתור חיוג</strong> - התקשרות ישירה ללקוח</li>
+                    <ul>
+                        <li><strong>לחץ על "נקה"</strong> (🗑️) לאיפוס המספר המזוהה</li>
+                        <li>חוזר למצב סריקה</li>
+                    </ul>
+
+                    <h3>4. כפתור חיוג</h3>
+                    <ul>
+                        <li><strong>לחץ על "חייג"</strong> (📞) להתקשרות ישירה</li>
+                        <li>פותח את אפליקציית החיוג עם המספר</li>
+                    </ul>
+
+                    <h3>5. שמירת מצב</h3>
+                    <ul>
+                        <li><strong>שמירה אוטומטית</strong> של מצב האפליקציה</li>
+                        <li><strong>שחזור אוטומטי</strong> בעת פתיחה מחדש</li>
+                        <li>שומר: מצב SMS/WhatsApp, מצב יציאה לדרך, רשימת שליחה קבוצתית</li>
+                    </ul>
+
+                    <hr style="border-color: #333; margin: 30px 0;">
+
+                    <h2>טיפים לשימוש מיטבי</h2>
+                    <h3>✅ מומלץ:</h3>
+                    <ol>
+                        <li>השתמש ב-<strong>מצב SMS</strong> לשימוש שוטף</li>
+                        <li>השתמש ב-<strong>שליחה קבוצתית</strong> לחיסכון בזמן</li>
+                        <li>הפעל את <strong>הפנס</strong> במקומות חשוכים</li>
+                        <li>השתמש ב-<strong>מצב יציאה לדרך</strong> לניווט יעיל</li>
+                        <li>התאם את <strong>ההודעה המוגדרת מראש</strong> לצרכים שלך</li>
+                    </ol>
+
+                    <h3>⚠️ הימנע:</h3>
+                    <ol>
+                        <li><strong>אל תשתמש במצב WhatsApp</strong> אלא במקרי חירום</li>
+                        <li><strong>אל תעבור את המכסה</strong> של 30 הודעות ב-5 דקות</li>
+                        <li><strong>אל תשלח ספאם</strong> - זה עלול לגרום לחסימה</li>
+                    </ol>
+
+                    <hr style="border-color: #333; margin: 30px 0;">
+
+                    <h2>פתרון בעיות נפוצות</h2>
+                    <h3>המספר לא מזוהה:</h3>
+                    <ul>
+                        <li>ודא שהמספר ברור ומואר</li>
+                        <li>השתמש בפנס במקומות חשוכים</li>
+                        <li>נסה הזנה ידנית (לחיצה כפולה)</li>
+                    </ul>
+
+                    <h3>ההודעה לא נשלחת:</h3>
+                    <ul>
+                        <li>בדוק הרשאות SMS</li>
+                        <li>ודא שיש חיבור לרשת</li>
+                        <li>בדוק שלא עברת את המכסה</li>
+                    </ul>
+
+                    <h3>WhatsApp לא נפתח:</h3>
+                    <ul>
+                        <li>ודא ש-WhatsApp מותקן</li>
+                        <li>בדוק שהמספר תקין</li>
+                        <li>נסה לפתוח WhatsApp ידנית</li>
+                    </ul>
+
+                    <h3>התגובות לא מתקבלות:</h3>
+                    <ul>
+                        <li>בדוק הרשאות קריאת SMS</li>
+                        <li>ודא שההודעה נשלחה בהצלחה</li>
+                        <li>המתן מספר דקות - לקוחות לא תמיד עונים מיד</li>
+                    </ul>
+
+                    <hr style="border-color: #333; margin: 30px 0;">
+
+                    <h2>סיכום מהיר</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>תכונה</th>
+                                <th>כפתור</th>
+                                <th>תיאור קצר</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>סריקה רגילה</td>
+                                <td>-</td>
+                                <td>מצב ברירת מחדל, סרוק ושלח SMS</td>
+                            </tr>
+                            <tr>
+                                <td>שליחה קבוצתית</td>
+                                <td>📋</td>
+                                <td>עד 30 מספרים ב-5 דקות</td>
+                            </tr>
+                            <tr>
+                                <td>פנס</td>
+                                <td>🔦</td>
+                                <td>תאורה למקומות חשוכים</td>
+                            </tr>
+                            <tr>
+                                <td>הגדרות</td>
+                                <td>⚙️</td>
+                                <td>עריכת הודעה והתנתקות</td>
+                            </tr>
+                            <tr>
+                                <td>מצב WhatsApp</td>
+                                <td>💬</td>
+                                <td>שימוש חירום בלבד!</td>
+                            </tr>
+                            <tr>
+                                <td>שלח SMS</td>
+                                <td>📱</td>
+                                <td>שליחה ידנית ללא סריקה</td>
+                            </tr>
+                            <tr>
+                                <td>שלח WhatsApp</td>
+                                <td>💚</td>
+                                <td>שליחה ידנית ב-WhatsApp</td>
+                            </tr>
+                            <tr>
+                                <td>יציאה לדרך</td>
+                                <td>🚗</td>
+                                <td>צפייה בתגובות וניווט</td>
+                            </tr>
+                            <tr>
+                                <td>הזנה ידנית</td>
+                                <td>✏️</td>
+                                <td>הזנת מספר ידנית</td>
+                            </tr>
+                            <tr>
+                                <td>נקה</td>
+                                <td>🗑️</td>
+                                <td>איפוס המספר המזוהה</td>
+                            </tr>
+                            <tr>
+                                <td>חייג</td>
+                                <td>📞</td>
+                                <td>התקשרות ישירה</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p><strong>גרסה:</strong> 1.0<br>
+                        <strong>עדכון אחרון:</strong> נובמבר 2025
+                    </p>
+                    <p><strong>תמיכה טכנית:</strong> לשאלות ובעיות, פנה למפתח האפליקציה בכתובת: <a
+                            href="mailto:Scan2Chat@proton.me" style="color: #4CAF50;">Scan2Chat@proton.me</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showGuide(guideType) {
+            // Hide all guides
+            document.querySelectorAll('.guide-content').forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Remove active from all buttons
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Show selected guide
+            if (guideType === 'visual') {
+                document.getElementById('visual-guide').classList.add('active');
+                document.querySelectorAll('.tab-button')[0].classList.add('active');
+            } else if (guideType === 'full') {
+                document.getElementById('full-guide').classList.add('active');
+                document.querySelectorAll('.tab-button')[1].classList.add('active');
+            }
+        }
+    </script>
+</body>
+
+</html>
